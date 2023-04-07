@@ -1,0 +1,28 @@
+graph LR
+A((Initial CHOP protocol)) -->|Incomplete / Poor tolerability| B{PPC protocol}
+A -->|Poor tolerability| C(LOPP protocol)
+A -->|T cell phenotype| D(LOPP protocol)
+A -->|PD| E((Second rescue protocol))
+E -->|LOPP-based protocol| F((Rescued))
+E -->|Single agent CCNU| G((Rescued))
+F -->|Incomplete| B
+G -->|Incomplete| B
+C -->|Neutropaenia or thrombocytopenia| H(single agent CCNU)
+D -->|Completed| I{PPC protocol}
+D -->|PD| I
+I -->|PD| B
+B -->|No completed rescue protocols| J(End)
+E -->|No completed rescue protocols| J
+F -->|No completed| J
+G -->|No completed| J
+H -->|PD| B
+I -->|PD| B
+K((Initial LOPP protocol)) -->|Grade IV neutropaenia| H
+K -->|Grade IV thrombocytopenia| J(End)
+K -->|PD| L((PPC protocol))
+L -->|No response| B
+M((Single agent doxorubicin)) -->|PD| B
+N(No chemotherapy) -->|Phenotype undetermined| J
+N -->|B cell phenotype| I
+N -->|T cell phenotype| I
+O((PPC protocol)) -->|Lasparaginase| P((Clinical signs or bone marrow disease))
